@@ -43,9 +43,10 @@ export async function addLiquidity(
   const deadline = ethers.BigNumber.from(time);
 
   await token1.approve(routerContract.address, amountIn1);
-  await token2.approve(routerContract.address, amountIn2);
-
-  const wethAddress = await routerContract.WETH();
+  setTimeout(async () => {
+    await token2.approve(routerContract.address, amountIn2);
+    setTimeout(async () => {
+      const wethAddress = await routerContract.WETH();
 
   console.log([
     address1,
@@ -93,6 +94,10 @@ export async function addLiquidity(
       deadline
     );
   }
+    }, 5000);
+  }, 5000);
+
+  
 }
 
 // Function used to remove Liquidity from any pair of tokens or token-AUT

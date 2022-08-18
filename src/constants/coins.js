@@ -241,6 +241,29 @@ const GÖRLICoins = [
   },
 ]
 
+const TEST_OASISCoins = [
+  {
+    name: "Ether",
+    abbr: "ETH",
+    address: "", // Weth address is fetched from the router
+  },
+  {
+    name: "TOKEN A",
+    abbr: "A",
+    address: "0x4f3f983Ba24bC688E02658B8a127A976047dfBBd",
+  },
+  {
+    name: "TOKEN B",
+    abbr: "B",
+    address: "0x94743ec5a69695cAAF79A5407Df30986a15D574a",
+  },
+  {
+    name: "USD Token",
+    abbr: "USDT",
+    address: "0x8456375b67A0469cd6ee1A75c3620F1De119930A",
+  },
+]
+
 const COINS = new Map();
 COINS.set(chains.ChainId.MAINNET, MAINNETCoins);
 COINS.set(chains.ChainId.ROPSTEN, ROPSTENCoins);
@@ -251,4 +274,5 @@ COINS.set(chains.ChainId.AUTONITY, AUTONITYCoins);
 COINS.set(chains.ChainId.DEVNET, DEVNETCoins);
 COINS.set(chains.ChainId.PARASTATE, PARASTATECoins);
 COINS.set(chains.ChainId.GANCHE, GANACHECoins)
+COINS.set(chains.ChainId.TEST_OASIS, TEST_OASISCoins)
 export default COINS

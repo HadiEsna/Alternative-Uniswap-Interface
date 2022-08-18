@@ -138,9 +138,9 @@ export async function swapTokens(
     amountIn,
     tokens
   );
-
   await token1.approve(routerContract.address, amountIn);
-  const wethAddress = await routerContract.WETH();
+  setTimeout(async () => {
+    const wethAddress = await routerContract.WETH();
 
   if (address1 === wethAddress) {
     // Eth -> Token
@@ -169,6 +169,8 @@ export async function swapTokens(
       deadline
     );
   }
+  }, 5000);
+  
 }
 
 //This function returns the conversion rate between two token addresses
